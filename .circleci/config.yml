@@ -80,12 +80,12 @@ workflows:
   myWorkflow:
     jobs:
       - build
-      - create_infrastructure
+      - create_infrastructure:
           requires:
-            - build
-      # - configure_infrastructure
+              - build
+      # - configure_infrastructure:
       #     requires:
       #       - create_infrastructure
-      - smoke_test
+      - smoke_test:
           requires:
             - create_infrastructure
