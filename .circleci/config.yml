@@ -81,5 +81,11 @@ workflows:
     jobs:
       - build
       - create_infrastructure
+          requires:
+            - build
       # - configure_infrastructure
+      #     requires:
+      #       - create_infrastructure
       - smoke_test
+          requires:
+            - create_infrastructure
